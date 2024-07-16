@@ -5,18 +5,18 @@ from student.models import Student
 # Create your models here.
 
 class Course(models.Model):
-    courses_name=models.CharField(max_length=20)
-    courses_code=models.IntegerField()
-    courses_TA=models.CharField(max_length=20)
-    courses_term=models.CharField(max_length=20)
-    courses_description=models.TextField()
-    courses_department=models.CharField(max_length=20)
-    courses_syllabus=models.CharField(max_length=20)
-    courses_instructor=models.CharField(max_length=20)
-    courses_duration=models.SmallIntegerField()
+    course_name=models.CharField(max_length=20)
+    course_code=models.IntegerField()
+    course_TA=models.CharField(max_length=20)
+    course_term=models.CharField(max_length=20)
+    course_description=models.TextField()
+    course_department=models.CharField(max_length=20)
+    course_syllabus=models.CharField(max_length=20)
+    course_instructor=models.CharField(max_length=20)
+    course_duration=models.SmallIntegerField()
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
 
 
 def __str__(self):
-    return f"{self.courses_assignment} {self.courses_department}"
+    return f"{self.course_assignment} {self.course_department}"
 

@@ -31,8 +31,8 @@ class TeacherListView(APIView):
 
 class CourseListView(APIView):
     def get(self,request,format=None):
-        courses=Courses.objects.all()
-        serializer=CoursesSerializer(courses,many=True)
+        courses=Course.objects.all()
+        serializer=CourseSerializer(courses,many=True)
         return Response(serializer.data)
 
 

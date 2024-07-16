@@ -3,6 +3,7 @@ from .views import StudentListView
 from .views import TeacherListView
 from .views import CourseListView
 from .views import ClassListView
+from .views import PeriodListView
 
 urlpatterns=[
     path("students/", StudentListView.as_view(), name="student_list_view"),
