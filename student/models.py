@@ -14,7 +14,7 @@ class Student(models.Model):
     next_of_kin=models.CharField(max_length=20)
     country=models.CharField(max_length=20)
     bio=models.TextField()
-    picture=models.ImageField()
+    picture=models.ImageField(upload_to='images/')
 
     def __str__(self):
         return f"{self.first_name} {self.age}"

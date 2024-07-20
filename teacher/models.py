@@ -12,7 +12,7 @@ class Teacher(models.Model):
     teacher_description=models.TextField(max_length=20)
     teacher_occupation=models.CharField(max_length=20)
     teacher_salary=models.SmallIntegerField()
-    teacher_headshot=models.ImageField()
+    teacher_headshot=models.ImageField(upload_to='images/')
     teacher_bank_account=models.IntegerField()
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
 
