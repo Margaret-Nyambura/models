@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework import status
 from student.models import Student
 from .serializers import StudentSerializer
 from teacher.models import Teacher
@@ -11,7 +12,6 @@ from classes.models import Classes
 from .serializers import ClassesSerializer
 from period.models import Period
 from .serializers import PeriodSerializer
-from rest_framework import status
 
 
 # Create your views here.
@@ -196,5 +196,3 @@ class PeriodDetailView(APIView):
 
 
     
-
-
