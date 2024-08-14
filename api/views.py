@@ -19,6 +19,12 @@ from .serializers import PeriodSerializer
 class StudentListView(APIView):
     def get(self,request):
         students=Student.objects.all()
+        first_name=request.query_params.get("first_name")
+        if first_name:
+            students=students.filter(first_name=first_name)
+        country=request.query_params.get("country")
+        if country:
+            students=students.filter(country=country)
         serializer=StudentSerializer(students,many=True)
         return Response(serializer.data)
 
@@ -52,6 +58,25 @@ class StudentDetailView(APIView):
         serializer=Student.objects.get(id=id)
         Student.delete()
         return Response(status=status.HTTP_201_ACCEPTED)
+    
+    def enroll_student(self,student,course_id):
+        course=Course.objects.get(id=course_id)
+        student.courses.add(course)
+        
+    def enroll_student(self,student,class_id):
+        classes=Classes.objects.get(id=class_id)
+        student.classes.add(classes)
+        
+            
+    def post(self,request,id):
+        student=Student.objects.get(id=id)
+        action=request.data.get("action")
+        if action:"enroll"
+        course_id=request.data.get("course")
+        self.enroll_student(student,course_id)
+        class_id=request.data.get("classes")
+        self.enroll_student(student,class_id)
+        return Response(status.HTTP_201_ACCEPTED)
 
 
 
@@ -87,6 +112,26 @@ class TeacherDetailView(APIView):
         serializer=Teacher.objects.get(id=id)
         Teacher.delete()
         return Response(status=status.HTTP_201_ACCEPTED)
+    
+    def enroll_teacher(self,teacher,course_id):
+        course=Course.objects.get(id=course_id)
+        teacher.course.add(courses)
+        
+    def enroll_teacher(self, teacher,class_id):
+        classes=Classes.objects.get(id=class_id)
+        teacher.classes.add(Classes)
+        
+              
+    def post(self,request,id):
+        teacher=Teacher.objects.get(id=id)
+        action=request.data.get("action")
+        if action:"enroll"
+        course_id=request.data.get("course")
+        self.enroll_teacher(teacher,course_id)
+        class_id=request.data.get("classes")
+        self.enroll_teacher(teacher, class_id)
+        return Response(status.HTTP_201_ACCEPTED)
+        
     
     
         

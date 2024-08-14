@@ -19,4 +19,3 @@ class Classes(models.Model):
 
     def __str__(self):
         return f"{self.class_bio} {self.class_description}"
-

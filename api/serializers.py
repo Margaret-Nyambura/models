@@ -7,8 +7,8 @@ from period.models import Period
 
 class StudentSerializer(serializers.ModelSerializer):
        class Meta:
-        model=Student
-        fields="__all__"
+              model=Student
+              fields="__all__"
 
 
 class TeacherSerializer(serializers.ModelSerializer):

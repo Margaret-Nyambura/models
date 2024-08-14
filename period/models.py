@@ -12,6 +12,8 @@ class Period(models.Model):
     classroom = models.CharField(max_length=100)
     day_of_the_week = models.IntegerField()
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    teacher=models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    classes=models.ForeignKey(Classes, on_delete=models.CASCADE)
     
     def __str__(self):
         return f"{self.start_time} {self.end_time}"

@@ -1,4 +1,6 @@
 from django.db import models
+from course.models import Course
+from classes.models import Classes
 
 # Create your models here.
 
@@ -15,6 +17,8 @@ class Student(models.Model):
     country=models.CharField(max_length=20)
     bio=models.TextField()
     picture=models.ImageField(upload_to='images/')
+    course=models.ManyToManyField(Course, related_name='students')
+    classes=models.ManyToManyField(Classes, related_name='students')
 
     def __str__(self):
         return f"{self.first_name} {self.age}"

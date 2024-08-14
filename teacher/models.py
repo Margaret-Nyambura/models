@@ -1,5 +1,6 @@
 from django.db import models
 from student.models import Student
+from teacher.models import Teacher
 
 # Create your models here.
 
@@ -15,6 +16,8 @@ class Teacher(models.Model):
     teacher_headshot=models.ImageField(upload_to='images/')
     teacher_bank_account=models.IntegerField()
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    course=models.ManyToManyField(Course, related_name='teachers')
+    classes=models.ManyToManyField(Classes, related_name='teachers')
 
     
     def __str__(self):
