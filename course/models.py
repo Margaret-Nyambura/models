@@ -1,12 +1,12 @@
 from django.db import models
-from student.models import Student
 
 
 # Create your models here.
 
 class Course(models.Model):
     course_name=models.CharField(max_length=20)
-    course_code=models.IntegerField()
+    course_id=models.AutoField(primary_key=True)
+    course_code = models.CharField(max_length=10, unique=True)
     course_TA=models.CharField(max_length=20)
     course_term=models.CharField(max_length=20)
     course_description=models.TextField()
@@ -14,7 +14,6 @@ class Course(models.Model):
     course_syllabus=models.CharField(max_length=20)
     course_instructor=models.CharField(max_length=20)
     course_duration=models.SmallIntegerField()
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
 
 
 def __str__(self):

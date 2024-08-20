@@ -12,6 +12,11 @@ from classes.models import Classes
 from .serializers import ClassesSerializer
 from period.models import Period
 from .serializers import PeriodSerializer
+from .serializers import MinimalStudentSerializer
+from .serializers import MinimalTeacherSerializer
+from .serializers import MinimalCourseSerializer
+from .serializers import MinimalClassesSerializer
+from .serializers import MinimalPeriodSerializer
 
 
 # Create your views here.
@@ -25,7 +30,7 @@ class StudentListView(APIView):
         country=request.query_params.get("country")
         if country:
             students=students.filter(country=country)
-        serializer=StudentSerializer(students,many=True)
+        serializer=MinimalStudentSerializer(students,many=True)
         return Response(serializer.data)
 
 
@@ -83,7 +88,7 @@ class StudentDetailView(APIView):
 class TeacherListView(APIView):
     def get(self,request):
         teachers=Teacher.objects.all()
-        serializer=TeacherSerializer(teachers,many=True)
+        serializer=MinimalTeacherSerializer(teachers,many=True)
         return Response(serializer.data)
     
     def post(self,request):
@@ -138,7 +143,7 @@ class TeacherDetailView(APIView):
 class CourseListView(APIView):
     def get(self,request,format=None):
         courses=Course.objects.all()
-        serializer=CourseSerializer(courses,many=True)
+        serializer=MinimalCourseSerializer(courses,many=True)
         return Response(serializer.data)
     
     def post(self,request):
@@ -172,7 +177,7 @@ class CourseDetailView(APIView):
 class ClassListView(APIView):
     def get(self,request,format=None):
         classess=Classes.objects.all()
-        serializer=ClassesSerializer(classess,many=True)
+        serializer=MinimalClassesSerializer(classess,many=True)
         return Response(serializer.data)
     
     def post(self,request):
@@ -207,7 +212,7 @@ class classDetailView(APIView):
 class PeriodListView(APIView):
     def get(self,request,format=None):
         periods=Period.objects.all()
-        serializer=PeriodSerializer(periods,many=True)
+        serializer=MinimalPeriodSerializer(periods,many=True)
         return Response(serializer.data)
     
     def post(self,request):
@@ -223,6 +228,7 @@ class PeriodDetailView(APIView):
         period=Period.objects.get(id=id)
         serializer=PeriodSerializer(period)
         return Response(serializer.data)
+    
     def put(self,request,id):
         period=Period.objects.get(id=id)
         serializer=PeriodSerializer(period,data=request.data)

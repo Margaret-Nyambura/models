@@ -14,7 +14,6 @@ class Student(models.Model):
     country=models.CharField(max_length=20)
     phone_number=models.CharField(max_length=20)
     next_of_kin=models.CharField(max_length=20)
-    country=models.CharField(max_length=20)
     bio=models.TextField()
     picture=models.ImageField(upload_to='images/')
     course=models.ManyToManyField(Course, related_name='students')
