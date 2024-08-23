@@ -5,5 +5,5 @@ from .forms import StudentRegistationForm
 
 def register_student(request):
     form=StudentRegistationForm()
-    return render(request,"student/register_student.html", {"forms":form})
+    return render(request,"student/register_student.html", {"form":form})
 
