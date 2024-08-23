@@ -49,7 +49,7 @@ class MinimalStudentSerializer(serializers.ModelSerializer):
        
        class Meta:
               model=Student
-              fields=["first_name","email","student_id","full_name"]
+              fields=["full_name","email","student_id"]
     
 class MinimalTeacherSerializer(serializers.ModelSerializer):
        teacher_age=serializers.SerializerMethodField()
@@ -85,4 +85,4 @@ class MinimalPeriodSerializer(serializers.ModelSerializer):
               return f"{object.end_time} {object.classroom}"
        class Meta:
            model=Period
-           fields=["start_time", "end_time", "classroom", "classes","teacher"]
+           fields=["start_time", "end_time", "classes","teacher"]

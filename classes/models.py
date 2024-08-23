@@ -7,7 +7,6 @@ class Classes(models.Model):
     class_capacity=models.SmallIntegerField()
     class_performance=models.CharField(max_length=30)
     class_lecture=models.CharField(max_length=30)
-    class_id=models.AutoField(primary_key=True)
     class_name=models.CharField(max_length=30)
     class_representative=models.CharField(max_length=30)
     class_description=models.TextField(max_length=30)
