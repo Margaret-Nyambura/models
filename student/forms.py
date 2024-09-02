@@ -5,4 +5,4 @@ from .models import Student
 class StudentRegistationForm(forms.ModelForm):
     class Meta:
         model=Student
-        fields="__all__"
+        fields=["first_name","last_name","code","email","age","country","phone_number","next_of_kin","bio","course","classes"]

@@ -1,9 +1,12 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register student</title>
+    <link rel="stylesheet" href="{% static 'school/css/style.css' %}">
 </head>
 <body>
     <h3>Student Registration</h3>
@@ -11,7 +14,7 @@
        {%csrf_token%} 
        <!-- for protecting the form -->
        {{form.as_p}}
-       <button type="submit" class="btn save">Save</button>
+       <button type="submit" class="btnsave">Save</button>
    </form>
 </body>
 </html>

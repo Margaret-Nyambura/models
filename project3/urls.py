@@ -21,4 +21,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     path('students/', include('student.urls')),
+    path('teachers/', include('teacher.urls')),
+    path('periods/', include('period.urls')),
+    path('classess/', include('classes.urls')),
+    path('courses/', include('course.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('home/', include('home.urls')),
 ]

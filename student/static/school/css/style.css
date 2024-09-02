@@ -1,0 +1,123 @@
+/* body{
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.btnsave {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 8%;
+    padding-right: 8%;
+    border-radius: 17%;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 6%;
+    margin-top: 30px;
+}
+
+.register p{
+    font-size: 14px;
+    margin-top: 20px;
+
+}
+
+.register{
+    margin-top: 30px;
+    font-size:15px;
+} 
+
+h3{
+    font-size: 20px;
+    text-align: center;
+    color:navy;
+} */
+
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Heading styling */
+h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* Form container styling */
+.register {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Form paragraph styling */
+.register p {
+    margin-bottom: 1rem;
+}
+
+/* Label styling */
+.register label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Input and textarea styling */
+.register input[type="text"],
+.register input[type="email"],
+.register input[type="password"],
+.register textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.register input[type="text"]:focus,
+.register input[type="email"]:focus,
+.register input[type="password"]:focus,
+.register textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Button styling */
+.btnsave {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btnsave:hover {
+    background-color: #0056b3;
+}
+
+
