@@ -7,6 +7,18 @@
 </head>
 <body>
     <h1>Welcome home</h1>
-    {%csrf_token%}
+    {% if user.is_authenticated %}
+    <p>You are logged in as {{ user.username }}.</p>
+    <a href="{% url 'logout' %}">Logout</a>  <!-- Link to logout -->
+{% else %}
+    <p>Please <a href="{% url 'login' %}">login</a> to continue.</p>
+{% endif %}
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
 </body>
 </html>
